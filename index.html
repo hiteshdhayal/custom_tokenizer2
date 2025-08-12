@@ -1,0 +1,36 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom BPE Tokenizer Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Custom Tokenizer</h1>
+    
+    <h2>Step 1: Train the Tokenizer</h2>
+    <label for="training-text">Training Text:</label>
+    <textarea id="training-text" placeholder="Enter text to train on...">This is a sample text to learn from. Repeat words like sample sample to merge.</textarea>
+    
+    <label for="vocab-size">Vocabulary Size:</label>
+    <input type="number" id="vocab-size" value="300">
+    
+    <label for="special-tokens">Special Tokens (comma-separated):</label>
+    <input type="text" id="special-tokens" placeholder="<bos>,<eos>">
+    
+    <button onclick="trainTokenizer()">Train Tokenizer</button>
+    
+    <h2>Step 2: Encode/Decode Text</h2>
+    <label for="input-text">Input Text:</label>
+    <textarea id="input-text" placeholder="Enter text to encode...">This is a sample <bos> text</textarea>
+    
+    <button onclick="encodeText()">Encode</button>
+    <button onclick="decodeText()">Decode (from encoded tokens)</button>
+    
+    <div id="output"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
